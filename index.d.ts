@@ -1,14 +1,16 @@
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * Change the promise provider.
+ * @param promise The promise to convert.
+ * @param newPromiseProvider The new promise provider object.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const changePromise = require("convert-promise");
+ * const BBPromise = require("bluebird");
+ *
+ * const es6Promise = new Promise(resolve => resolve("Hello World!")); // Regular native promise.
+ * const bluebirdPromise = changePromise(es6Promise, BBPromise); // Bluebird promise.
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function newPromiseProvider(promise: PromiseLike, newPromiseProvider: PromiseConstructorLike): PromiseLike;
 
-export = theModule;
+export = newPromiseProvider;

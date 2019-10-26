@@ -1,41 +1,38 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Convert promise [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/convert-promise/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/convert-promise)
 
-My awesome module.
+Convert the promise to use another promise provider.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/convert-promise.png)](https://npmjs.com/package/convert-promise)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install convert-promise
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const convertPromise = require("convert-promise");
+const BBPromise = require("bluebird");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+const es6Promise = new Promise(resolve => resolve("Hello World!")); // Regular native promise.
+const bluebirdPromise = convertPromise(es6Promise, BBPromise); // Bluebird promise.
 ```
 
 ## API
 
-### theModule(input, options?)
+### convertPromise(promise, newPromiseProvider)
 
-#### input
+#### promise
 
-Type: `string`
+Type: `PromiseLike`
 
-Lorem ipsum.
+The promise to convert.
 
-#### options
+#### newPromiseProvider
 
-Type: `object`
+Type: `PromiseContructorLike`\
+Default: `Promise`
 
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+The new promise provider object.

@@ -1,13 +1,15 @@
 import test from "ava"
-import theModule from "."
+import convertPromise from "."
+import BBPromise from "bluebird"
+import isPromise from "p-is-promise"
 
 test("main", (t) => {
-    t.throws(() => {
-        theModule(123)
-    }, {
-        instanceOf: TypeError,
-        message: "Expected a string, got number",
-    })
+    const es6Promise = new Promise((resolve) => resolve("Hello World!")) // Regular native promise.
+    t.true(isPromise(es6Promise))
 
-    t.is(theModule("unicorns"), "unicorns & rainbows")
+    const bluebirdPromise = convertPromise(es6Promise, BBPromise) // Bluebird promise.
+    t.true(isPromise(bluebirdPromise))
+
+    const convertedBackEs6Promise = convertPromise(bluebirdPromise, Promise)
+    t.true(isPromise(convertedBackEs6Promise))
 })

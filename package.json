@@ -1,8 +1,8 @@
 {
-    "name": "the-module",
+    "name": "convert-promise",
     "version": "0.0.0",
-    "description": "My awesome module.",
-    "repository": "https://github.com/Richienb/the-module.git",
+    "description": "Convert the promise to use another promise provider.",
+    "repository": "https://github.com/Richienb/convert-promise.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
     "license": "MIT",
     "main": "index.js",
@@ -11,18 +11,19 @@
         "index.d.ts"
     ],
     "engines": {
-        "node": ">=8"
+        "node": ">=6"
     },
     "scripts": {
         "lint": "eslint .",
         "test": "yarn lint && ava"
     },
     "keywords": [],
-    "dependencies": {},
     "devDependencies": {
         "ava": "^2.1.0",
+        "bluebird": "^3.7.1",
         "eslint": "^6.5.1",
-        "eslint-config-richienb": "^0.2.0"
+        "eslint-config-richienb": "^0.2.0",
+        "p-is-promise": "^3.0.0"
     },
     "eslintConfig": {
         "extends": "richienb/node"
