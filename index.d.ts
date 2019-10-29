@@ -11,6 +11,6 @@
  * const bluebirdPromise = changePromise(es6Promise, BBPromise); // Bluebird promise.
  * ```
 */
-declare function newPromiseProvider(promise: PromiseLike, newPromiseProvider: PromiseConstructorLike): PromiseLike;
+declare function newPromiseProvider<T>(promise: PromiseLike<T>, newPromiseProvider: PromiseConstructorLike): PromiseLike<T>;
 
 export = newPromiseProvider;
