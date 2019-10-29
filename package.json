@@ -1,6 +1,6 @@
 {
     "name": "convert-promise",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Convert the promise to use another promise provider.",
     "repository": "https://github.com/Richienb/convert-promise.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
