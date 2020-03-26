@@ -22,7 +22,7 @@
         "ava": "^2.1.0",
         "bluebird": "^3.7.1",
         "eslint": "^6.5.1",
-        "eslint-config-richienb": "^0.2.0",
+        "eslint-config-richienb": "^0.4.2",
         "p-is-promise": "^3.0.0"
     },
     "eslintConfig": {
